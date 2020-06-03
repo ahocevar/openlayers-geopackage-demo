@@ -1,0 +1,29 @@
+{
+  "name": "openlayers-geopackage-demo",
+  "version": "1.0.0",
+  "description": "GeoPackage demo",
+  "main": "index.html",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack"
+  },
+  "dependencies": {
+    "@ngageoint/geopackage": "2.1.4",
+    "ol": "6.3.1",
+    "webworkify": "^1.5.0"
+  },
+  "devDependencies": {
+    "css-loader": "^3.5.3",
+    "html-webpack-plugin": "^4.3.0",
+    "null-loader": "^4.0.0",
+    "parcel-bundler": "^1.6.1",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "keywords": [
+    "javascript",
+    "starter"
+  ]
+}
