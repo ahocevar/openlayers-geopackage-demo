@@ -2,8 +2,10 @@
 
 Minimal OpenLayers viewer for GeoPackage raster tiles. Supports EPSG:3857 tile sets.
 
-## Installation
+## Install it
 
+    git clone https://github.com/ahocevar/openlayers-geopackage-demo.git
+    cd openlayers-geopackage-demo
     npm install
 
 ## Run it
