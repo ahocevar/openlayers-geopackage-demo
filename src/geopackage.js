@@ -16,9 +16,18 @@ export const loadGeoPackage = function (e) {
 function loadByteArray(array, callback) {
   open(array, function (err, geoPackage) {
     const tileTableNames = geoPackage.getTileTables();
+    const tileDao = geoPackage.getTileDao(tileTableNames[0]);
     const tableLayer = new TileLayer({
+      extent: [
+        tileDao.tileMatrixSet.min_x,
+        tileDao.tileMatrixSet.min_y,
+        tileDao.tileMatrixSet.max_x,
+        tileDao.tileMatrixSet.max_y
+      ],
       source: new XYZ({
         wrapX: false,
+        minZoom: tileDao.minWebMapZoom,
+        maxZoom: tileDao.maxWebMapZoom,
         url: "{z},{x},{y}",
         tileLoadFunction(tile, src) {
           const [z, x, y] = src.split(",").map(Number);
@@ -30,6 +39,7 @@ function loadByteArray(array, callback) {
         },
       }),
     });
+    map.getView().fit(tableLayer.getExtent());
     map.addLayer(tableLayer);
   });
 }
