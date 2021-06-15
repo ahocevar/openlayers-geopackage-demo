@@ -8,8 +8,8 @@
     "build": "webpack"
   },
   "dependencies": {
-    "@ngageoint/geopackage": "2.1.4",
-    "ol": "6.3.1",
+    "@ngageoint/geopackage": "^3.0.9",
+    "ol": "^6.5.1-dev.1622067211515",
     "webworkify": "^1.5.0"
   },
   "devDependencies": {
